@@ -1,15 +1,17 @@
 package ParkingTicket;
 
 import java.util.Calendar;
-import java.util.Scanner;
 
 public class Main {
 	public static void main(String args[]) {
 
 		Calendar calendar = Calendar.getInstance();
-		calendar.set();
+		calendar.set(2015, 10, 20);
 
-		Scanner s = new Scanner(System.in);
+		if (calendar.get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY
+				&& calendar.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
+
+		}
 
 	}
 }

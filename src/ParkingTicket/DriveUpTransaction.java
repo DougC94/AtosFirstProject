@@ -2,13 +2,16 @@ package ParkingTicket;
 
 public class DriveUpTransaction {
 
-	private int hours;
-	private double price;
+	protected int hours;
+	protected double price;
+
+	public void driveUpTransaction(int hours) {
+		this.hours = hours;
+	}
 
 	public double WeekParking() {
 
 		if (this.hours == 1) {
-
 			this.price = 4.70;
 		} else if (this.hours == 2) {
 			this.price = 7.40;
@@ -27,15 +30,16 @@ public class DriveUpTransaction {
 		return this.price;
 	}
 
-	public double WeekendParking(){
-		
-		if (this.hours == 2){
+	public double WeekendParking() {
+
+		if (this.hours == 2) {
 			this.price = 4.40;
-		}else if (this.hours == ){
-			this.price = 7.40; 
-		}else if (this.hours == ){
+		} else if (this.hours == 4) {
+			this.price = 7.40;
+		} else if (this.hours == 8) {
 			this.price = 12.00;
 		}
+		return this.price;
 	}
 
 }
