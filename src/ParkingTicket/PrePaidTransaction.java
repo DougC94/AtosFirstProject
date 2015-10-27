@@ -2,8 +2,17 @@ package ParkingTicket;
 
 public class PrePaidTransaction {
 
-	public PrePaidTransaction() {
+	protected boolean prepaid;
 
+	public PrePaidTransaction(boolean prepaid) {
+
+		this.prepaid = prepaid;
+
+	}
+
+	public boolean getPrePaidTransacation() {
+
+		return prepaid;
 	}
 
 }
