@@ -2,7 +2,7 @@ package ParkingTicket;
 
 public class PrePaidTransaction {
 
-	protected boolean prepaid;
+	private boolean prepaid;
 
 	public PrePaidTransaction(boolean prepaid) {
 

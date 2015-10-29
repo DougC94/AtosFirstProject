@@ -2,11 +2,15 @@ package ParkingTicket;
 
 public class OverstayedPrePaid {
 
-	protected boolean overstayed;
-	protected int extraPrice;
+	private boolean overstayed;
+	private int extraPrice;
 
 	public OverstayedPrePaid(boolean overstayed) {
 		this.overstayed = overstayed;
+
+	}
+
+	public int OverstayedTime() {
 
 	}
 

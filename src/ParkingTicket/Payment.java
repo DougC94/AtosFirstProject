@@ -21,4 +21,13 @@ public class Payment {
 		this.year = year;
 	}
 
+	public int getExpiryMonth() {
+
+		return month;
+	}
+
+	public int getExpiryYear() {
+
+		return year;
+	}
 }
