@@ -1,24 +1,33 @@
 package ParkingTicket;
 
+import java.util.Random;
+
 public class Payment {
-	private int cardnumber;
+	private String cardnumber;
 	private int month, year;
 
-	public void CreditCardNumber(int cardnumber) {
+	public void setCreditCardNumber() {
 
-		this.cardnumber = cardnumber;
-		;
+		String numeric = "0123456789";
+
+		StringBuilder sb = new StringBuilder();
+		Random r = new Random();
+
+		for (int i = 0; i < 16; i++)
+			sb.append(numeric.charAt(r.nextInt(numeric.length())));
+
+		this.cardnumber = sb.toString();
 	}
 
-	public int getCardNumber() {
+	public String getCardNumber() {
 
 		return cardnumber;
 	}
 
-	public void CardExpiryDate(int month, int year) {
-
-		this.month = month;
-		this.year = year;
+	public void CardExpiryDate() {
+		Random r = new Random();
+		this.month = r.nextInt(12);
+		this.year = 14 + r.nextInt(30);
 	}
 
 	public int getExpiryMonth() {

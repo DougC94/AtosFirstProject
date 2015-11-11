@@ -2,44 +2,60 @@ package ParkingTicket;
 
 public class DriveUpTransaction {
 
-	protected int hours;
-	protected double price;
+	private double weekprice, weekendprice;
+	private ParkingTicket ticket;
 
-	public void driveUpTransaction(int hours) {
-		this.hours = hours;
+	public DriveUpTransaction(ParkingTicket ticket) {
+		this.ticket = ticket;
 	}
 
-	public double WeekParking() {
+	public void setWeekParking() {
 
-		if (this.hours == 1) {
-			this.price = 4.70;
-		} else if (this.hours == 2) {
-			this.price = 7.40;
-		} else if (this.hours == 4) {
-			this.price = 10.30;
-		} else if (this.hours == 6) {
-			this.price = 14.80;
-		} else if (this.hours == 9) {
-			this.price = 17.80;
-		} else if (this.hours == 12) {
-			this.price = 20.20;
-		} else if (this.hours == 24) {
-			this.price = 23.70;
+		if (this.ticket.getLengthofStayHours() == 1) {
+			this.weekprice = 4.70;
+		} else if (this.ticket.getLengthofStayHours() == 2) {
+			this.weekprice = 7.40;
+		} else if (this.ticket.getLengthofStayHours() > 2 && this.ticket.getLengthofStayHours() <= 4) {
+			this.weekprice = 10.30;
+		} else if (this.ticket.getLengthofStayHours() > 4 && this.ticket.getLengthofStayHours() <= 6) {
+			this.weekprice = 14.80;
+		} else if (this.ticket.getLengthofStayHours() > 6 && this.ticket.getLengthofStayHours() <= 9) {
+			this.weekprice = 17.80;
+		} else if (this.ticket.getLengthofStayHours() > 9 && this.ticket.getLengthofStayHours() <= 12) {
+			this.weekprice = 20.20;
+		} else if (this.ticket.getLengthofStayHours() > 12 && this.ticket.getLengthofStayHours() <= 24) {
+			this.weekprice = 23.70;
 		}
 
-		return this.price;
 	}
 
-	public double WeekendParking() {
+	public double getWeekPrice() {
+		return weekprice;
+	}
 
-		if (this.hours == 2) {
-			this.price = 4.40;
-		} else if (this.hours == 4) {
-			this.price = 7.40;
-		} else if (this.hours == 8) {
-			this.price = 12.00;
+	public void setWeekendParking() {
+
+		if (this.ticket.getLengthofStayHours() == 1) {
+			this.weekprice = 3.70;
+		} else if (this.ticket.getLengthofStayHours() == 2) {
+			this.weekprice = 6.40;
+		} else if (this.ticket.getLengthofStayHours() > 2 && this.ticket.getLengthofStayHours() <= 4) {
+			this.weekprice = 9.30;
+		} else if (this.ticket.getLengthofStayHours() > 4 && this.ticket.getLengthofStayHours() <= 6) {
+			this.weekprice = 13.80;
+		} else if (this.ticket.getLengthofStayHours() > 6 && this.ticket.getLengthofStayHours() <= 9) {
+			this.weekprice = 16.80;
+		} else if (this.ticket.getLengthofStayHours() > 9 && this.ticket.getLengthofStayHours() <= 12) {
+			this.weekprice = 18.20;
+		} else if (this.ticket.getLengthofStayHours() > 12 && this.ticket.getLengthofStayHours() <= 24) {
+			this.weekprice = 21.70;
+
 		}
-		return this.price;
+	}
+
+	public double getWeekendPrice() {
+		return weekendprice;
+
 	}
 
 }

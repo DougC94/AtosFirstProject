@@ -3,16 +3,24 @@ package ParkingTicket;
 public class PrePaidTransaction {
 
 	private boolean prepaid;
+	private ParkingTicket ticket;
 
-	public PrePaidTransaction(boolean prepaid) {
+	public PrePaidTransaction(ParkingTicket ticket) {
+		this.ticket = ticket;
+		if (this.ticket.prePaidTicket() == true) {
+			System.out.println("User has Prepaid.");
+			this.prepaid = true;
+		} else {
 
-		this.prepaid = prepaid;
+			System.out.println("User has not Prepaid. Please insert credit card.");
+			this.prepaid = false;
+		}
 
 	}
 
-	public boolean getPrePaidTransacation() {
+	public boolean getIsItPrepaid() {
 
-		return prepaid;
+		return this.prepaid;
 	}
 
 }
