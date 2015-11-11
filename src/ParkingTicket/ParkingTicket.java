@@ -74,7 +74,7 @@ public class ParkingTicket {
 		}
 	}
 
-	public boolean prePaidTicket() {
+	public boolean getPrePaidTicket() {
 
 		return prepaid;
 	}
@@ -82,6 +82,11 @@ public class ParkingTicket {
 	public void setLatestLeaveHour() {
 		Random r = new Random();
 		this.hours2 = r.nextInt(24);
+
+	}
+
+	public void setLatestLeaveHour(int hour2) {
+		this.hours2 = hour2;
 
 	}
 
@@ -122,7 +127,7 @@ public class ParkingTicket {
 		Random r = new Random();
 		hours3 = r.nextInt(24);
 		if (this.mins3 > 0) {
-			this.hours3++;
+			hours3++;
 		}
 	}
 
@@ -132,8 +137,17 @@ public class ParkingTicket {
 
 	public void setLeaveTime() {
 
-		this.hours4 = hours3 + hours;
 		this.mins4 = mins3 + mins;
+		this.hours4 = hours3 + hours;
+		if (mins4 > 0) {
+			hours4++;
+		}
+		if (hours4 == 24) {
+			hours4 = 0;
+		} else if (hours > 24) {
+			hours4 = hours4 - 24;
+		}
+
 	}
 
 	public int getLeaveHour() {
@@ -147,7 +161,7 @@ public class ParkingTicket {
 	public String terminalDisplay() {
 
 		return "Transaction " + transactionnumber + ", Registration " + regno + ", Length of stay " + hours3 + " hours "
-				+ mins3 + " mins" + ", amount due £";
+				+ mins3 + " mins" + ", charge £";
 	}
 
 }

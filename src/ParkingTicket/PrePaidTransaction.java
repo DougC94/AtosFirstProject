@@ -7,7 +7,7 @@ public class PrePaidTransaction {
 
 	public PrePaidTransaction(ParkingTicket ticket) {
 		this.ticket = ticket;
-		if (this.ticket.prePaidTicket() == true) {
+		if (this.ticket.getPrePaidTicket() == true) {
 			System.out.println("User has Prepaid.");
 			this.prepaid = true;
 		} else {
